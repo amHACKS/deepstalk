@@ -10,10 +10,10 @@ import re, os
 
 
 def tweet(user_name):
-    twt = Twitter(app_key="PDz1fZLoCEHcOx035TtLsrcWS", 
-              app_secret="Ok1aJBP4nM6g87F3hFiPFY0R0a7qnUNsdIoKZteaAuzYF2yTuF", 
-              oauth_token="1292034807057149952-3Mlqa59ZAoqRdACgnW6z4goXUy3vUs", 
-              oauth_token_secret="ZZlu7jF3mymeapDxwj19MkqCYF3osQjp48xYEuIL4wRM1")
+    twt = Twitter(app_key="", 
+              app_secret="", 
+              oauth_token="", 
+              oauth_token_secret="")
 
     tweets = twt.user(user_name, 
                     count=1000, 
