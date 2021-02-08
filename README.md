@@ -53,11 +53,11 @@ pip install -r requirements.txt
 
 
 ## Tasks completed ##
-|No | Set Of Tasks   
+|Done | Set Of Tasks   
 | --|:---------------------------------------------------------------------------:|
-| 1 | Main file and/or other header files if used | 
-| 2 | The trained model |                                             
-| 3 | A Readme with instructions on how to run the code | 
-| 4 | A brief one page description of the methods used with proper citations |
-| 5 | Outcome Report |
+| :heavy_check_mark: | Main file and/or other header files if used | 
+| :heavy_check_mark: | The trained model |                                             
+| :heavy_check_mark: | A Readme with instructions on how to run the code | 
+| :heavy_check_mark: | A brief one page description of the methods used with proper citations |
+| :heavy_check_mark: | Outcome Report |
 
