@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ### 2. Output of Personality predictions ###
 ![Screenshot from 2021-02-08 15-25-51](https://user-images.githubusercontent.com/53506835/107203908-075e8780-6a22-11eb-9934-cbc9054de2e4.png)
 
-### 3. An insight into prediction (in the colab notebook)###
+### 3. An insight into prediction (in the colab notebook) ###
 ![Screenshot from 2021-02-08 15-29-07](https://user-images.githubusercontent.com/53506835/107204242-6fad6900-6a22-11eb-8f95-dc1a209bc1e5.png)
 
 
