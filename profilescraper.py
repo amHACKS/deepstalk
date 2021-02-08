@@ -19,7 +19,3 @@ def get_profile(keyword):
       r = re.search(r'https://in.linkedin.com/in/([^/?]+)', r).group(1)
       profiles['linkedin'] = r
   return profiles
-
-# ip = input('Enter the keywords: ')
-# profiles = get_profile(ip)
-# print(profiles)
