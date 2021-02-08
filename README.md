@@ -31,8 +31,8 @@ pip install -r requirements.txt
    ```
    cat predictions.txt
    ```
-   
-   
+### 2. Run on Google Collab ###
+   Link for collab
 ## Tasks completed ##
 
 
