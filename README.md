@@ -116,6 +116,13 @@ pip install -r requirements.txt
 ### 2. Run on Google Collab ###
    Link for collab
 ## Tasks completed ##
+|No | Set Of Tasks   
+| --|:---------------------------------------------------------------------------:|
+| 1 | Main file and/or other header files if used | 
+| 2 | The trained model |                                             
+| 3 | A Readme with instructions on how to run the code | 
+| 4 | A brief one page description of the methods used with proper citations |
+| 5 | Outcome Report |
 
 
 ## What's next? ##
