@@ -51,7 +51,7 @@ def fetch_usernames(filename, count):
     usernames = []
     for person in list_from_names:
         usernames.append(get_profile(person)['twitter'])
-    return usernames
+    return {'usernames':usernames, 'names':list_from_names}
 
 def fetch_tweets(usernames):
     tweets = []
@@ -91,14 +91,14 @@ plt.title(user_name+"'s Personality Report")
 plt.show() 
 """
 
-def fetch_predictions():
+def fetch_predictions(usernames):
     prediction_list = []
     summaries = []
     with open('information.txt','r') as f:
         summaries = [line.rstrip() for line in f]
     op_file = open('predictions.txt','a')
-    for s in summaries:
-        op_file.write(predict_personality(s) + '\n')
+    for s in range(len(summaries)):
+        op_file.write(usernames[s] + ' => [' + predict_personality(summaries[s]) + ']' + '\n')
     print('Generated predictions => predictions.txt')
     op_file.close()
 
@@ -140,6 +140,12 @@ if __name__ == '__main__':
         print (str(err))
 
     #DRIVER CODE
-    usernames = fetch_usernames(filename, count)
+    profile_dict = fetch_usernames(filename, count)
+    usernames = profile_dict['usernames']
+    fetched_names = profile_dict['names']
+    names = []
+    for f in fetched_names:
+        name = f.split(',')[0]
+        names.append(name)
     fetch_tweets(usernames)
-    fetch_predictions()
+    fetch_predictions(names)
