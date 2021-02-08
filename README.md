@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ## Usage ##
 ### 1.  Via Command line: ###  
 
-   Add desired names in names.txt along with some keywords(Already some have been included).
+   Add desired names in names.txt along with some keywords(some names and keywords already exist in the given file).
    
    Run the command down below  
    
