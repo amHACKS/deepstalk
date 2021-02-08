@@ -114,6 +114,12 @@ if __name__ == '__main__':
     vectorizer_31 = pickle.load( open( "models/vectorizer_31.p", "rb"))
     vectorizer_30 = pickle.load( open( "models/vectorizer_30.p", "rb"))
 
+    #CLEAR PREVIOUS OUTPUTS
+    if os.path.exists('information.txt'):
+        os.remove('information.txt')
+    if os.path.exists('predictions.txt'):
+        os.remove('predictions.txt')
+
     #COMMAND LINE INPUT
     argumentList = sys.argv[1:]
     if len(argumentList) == 0:
