@@ -8,6 +8,7 @@ from socialreaper import Twitter
 from socialreaper.tools import to_csv
 import re, os
 import getopt, sys
+from glob import glob
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -119,6 +120,9 @@ if __name__ == '__main__':
         os.remove('information.txt')
     if os.path.exists('predictions.txt'):
         os.remove('predictions.txt')
+    files = glob('profile_data/*')
+    for f in files:
+        os.remove(f)
 
     #COMMAND LINE INPUT
     argumentList = sys.argv[1:]
