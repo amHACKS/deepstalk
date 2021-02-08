@@ -1,5 +1,10 @@
 ## SmartScrapes
-Predicting the personality of the user based on their social activity
+Predicting the personality of the user based on their social activity. This project uses 6 parameters for measuring the personality of a user.
+- EXT - Extraversion
+- OPN - Openness
+- NEU - Neuorticism
+- CON - Conscientiousness
+- AGR - Agreeableness
 
 ## Workflow of the project ##
 ### 1. Searching a profile ###
