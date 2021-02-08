@@ -13,11 +13,19 @@ git clone https://github.com/Mainakdeb/e_summit.git
 ```
 cd e_summit
 ```
-3. Install the requirements from requirements.txt file
+3. Install the requirements from / requirements.txt file
 ``` python
 pip install -r requirements.txt
 ```
-
+## Usage ##
+1. via CLI
+   - Add desired names in names.txt along with some keywords(Already some have been included).
+   - Run the command down below
+   ```
+   python3 predict_type.py --testcase 7 --inputfile "names.txt"
+   ```
+   
+   
 ## Tasks completed ##
 
 
