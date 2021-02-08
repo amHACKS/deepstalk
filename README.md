@@ -40,6 +40,13 @@ pip install -r requirements.txt
    [Link to colab notebook](https://colab.research.google.com/github/Mainakdeb/e_summit/blob/main/predict_personality.ipynb)
    This notebook demostrates how our script works.
 
+### Props! ###
+1. Python
+2. Socialreaper
+3. SkLearn
+4. MatplotLib
+5. Pandas
+6. GSearch Library
 
 ## Demos ##
 ### 1. Providing input through names.txt ###
