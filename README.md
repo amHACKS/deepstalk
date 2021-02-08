@@ -18,11 +18,18 @@ cd e_summit
 pip install -r requirements.txt
 ```
 ## Usage ##
-1. via CLI
-   - Add desired names in names.txt along with some keywords(Already some have been included).
-   - Run the command down below
+### 1.  via CLI ###  
+
+   Add desired names in names.txt along with some keywords(Already some have been included).
+   
+   Run the command down below  
+   
    ```
    python3 predict_type.py --testcase 7 --inputfile "names.txt"
+   ```
+   See the output using:
+   ```
+   cat predictions.txt
    ```
    
    
