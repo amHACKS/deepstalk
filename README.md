@@ -5,6 +5,7 @@ Predicting the personality of the user based on their social activity. This proj
 - NEU - Neuorticism
 - CON - Conscientiousness
 - AGR - Agreeableness
+
 ## Setup ##
 1. Clone the project
 ```
@@ -19,7 +20,7 @@ cd e_summit
 pip install -r requirements.txt
 ```
 ## Usage ##
-### 1.  via CLI ###  
+### 1.  Via Command line: ###  
 
    Add desired names in names.txt along with some keywords(Already some have been included).
    
