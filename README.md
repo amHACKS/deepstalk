@@ -126,4 +126,5 @@ pip install -r requirements.txt
 
 
 ## What's next? ##
-
+- Completing personality prediction for linkedin profiles
+- Providing a GUI for the project 
