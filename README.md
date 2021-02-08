@@ -10,15 +10,15 @@ This project aims to predict the psychological traits of a person on the basis o
 - AGR - Agreeableness
 
 ## Setup ##
-1. Clone the project
+1. Clone the repository
 ```
 git clone https://github.com/Mainakdeb/e_summit.git
 ```
-2. Go to specific Directory 
+2. Navigate to specific Directory 
 ```
 cd e_summit
 ```
-3. Install the requirements from / requirements.txt file
+3. Install the requirements from requirements.txt file
 ``` python
 pip install -r requirements.txt
 ```
