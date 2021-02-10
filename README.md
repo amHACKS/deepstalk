@@ -12,7 +12,11 @@ This project aims to predict the psychological traits of a person on the basis o
 ## Here's How it Works:
 ![](https://github.com/Mainakdeb/e_summit/blob/main/images/e_summit_flowchart_2.png)
 
-## Setup ##
+## Run on Google Colab (no installation required)
+   [Link to colab notebook](https://colab.research.google.com/github/Mainakdeb/e_summit/blob/main/predict_personality.ipynb)
+   This notebook demostrates how our script works.
+
+## Local Setup 
 1. Clone the repository
 ```
 git clone https://github.com/Mainakdeb/e_summit.git
@@ -25,8 +29,8 @@ cd e_summit
 ``` python
 pip install -r requirements.txt
 ```
-## Usage ##
-### 1.  Via Command line: ###  
+
+## Run Via Command Line: 
 
    Add desired names in names.txt along with some keywords(some names and keywords already exist in the given file).
    
@@ -39,9 +43,6 @@ pip install -r requirements.txt
    ```
    cat predictions.txt
    ```
-### 2. Run on Google Colab ###
-   [Link to colab notebook](https://colab.research.google.com/github/Mainakdeb/e_summit/blob/main/predict_personality.ipynb)
-   This notebook demostrates how our script works.
 
 ## Props! ##
 1. Python
@@ -62,7 +63,7 @@ pip install -r requirements.txt
 ![Screenshot from 2021-02-08 15-29-07](https://github.com/Mainakdeb/e_summit/blob/main/images/chetan_bhagat_report_non_transparent.png)
 
 
-## Tasks completed ##
+## Tasks Completed ##
 |Done | Set Of Tasks   
 | --|:---------------------------------------------------------------------------:|
 | :heavy_check_mark: | Main file and/or other header files if used | 
@@ -71,6 +72,6 @@ pip install -r requirements.txt
 | :heavy_check_mark: | A brief one page description of the methods used with proper citations |
 | :heavy_check_mark: | Outcome Report |
 
-## What's next? ##
+## What's Next? ##
 - Completing personality prediction for linkedin profiles
 - Providing a GUI for the project 
