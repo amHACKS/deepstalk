@@ -32,6 +32,7 @@ cd e_summit
 ``` python
 pip install -r requirements.txt
 ```
+4. In case you don't want to train the algorithm, download pretrained models from Google drive - [link](https://drive.google.com/drive/folders/1oG_EZlshqx3leaMN41mQsZLKeYZdKocD?usp=sharing)
 
 ## Run Via Command Line: 
 
@@ -74,7 +75,3 @@ pip install -r requirements.txt
 | :heavy_check_mark: | A Readme with instructions on how to run the code | 
 | :heavy_check_mark: | A brief one page description of the methods used with proper citations |
 | :heavy_check_mark: | Outcome Report |
-
-## What's Next? ##
-- Completing personality prediction for linkedin profiles
-- Providing a GUI for the project 
