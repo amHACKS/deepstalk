@@ -9,6 +9,9 @@ This project aims to predict the psychological traits of a person on the basis o
 - CON - Conscientiousness
 - AGR - Agreeableness
 
+![](https://github.com/Mainakdeb/e_summit/blob/main/images/alg_diagram.png)
+
+
 ## Here's How it Works:
 ![](https://github.com/Mainakdeb/e_summit/blob/main/images/e_summit_flowchart_2.png)
 
