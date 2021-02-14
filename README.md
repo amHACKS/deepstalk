@@ -32,7 +32,7 @@ cd e_summit
 ``` python
 pip install -r requirements.txt
 ```
-4. In case you don't want to train the algorithm, download pretrained models from Google drive - [link](https://drive.google.com/drive/folders/1oG_EZlshqx3leaMN41mQsZLKeYZdKocD?usp=sharing)
+4. In case you don't want to train the algorithm, download pretrained models from [Google drive link](https://drive.google.com/drive/folders/1oG_EZlshqx3leaMN41mQsZLKeYZdKocD?usp=sharing)
 
 ## Run Via Command Line: 
 
