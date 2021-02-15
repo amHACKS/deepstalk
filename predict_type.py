@@ -1,4 +1,7 @@
 import pickle
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+#from data_prep import DataPrep
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -64,17 +67,27 @@ def fetch_tweets(usernames):
     op_file.close()
 
 
-def predict_personality(text):
-    sentences = re.split("(?<=[.!?]) +", text)
-    text_vector_31 = vectorizer_31.transform(sentences)
-    text_vector_30 = vectorizer_30.transform(sentences)
-    EXT = cEXT.predict(text_vector_31)
-    NEU = cNEU.predict(text_vector_30)
-    AGR = cAGR.predict(text_vector_31)
-    CON = cCON.predict(text_vector_31)
-    OPN = cOPN.predict(text_vector_31)
-    st = f'EXT = {np.mean(EXT)}, NEU = {np.mean(NEU)}, AGR = {np.mean(AGR)}, CON = {np.mean(CON)}, OPN = {np.mean(OPN)}'
-    return st
+def predict_personality(X):
+        X=[X]
+        predictions = {}
+        traits = ['OPN', 'CON', 'EXT', 'AGR', 'NEU']
+        for trait in traits:
+            pkl_model = models[trait]
+            trait_scores = pkl_model.predict(X, regression=True).reshape(1, -1)
+            # scaler = MinMaxScaler(feature_range=(0, 50))
+            # print(scaler.fit_transform(trait_scores))
+            # scaled_trait_scores = scaler.fit_transform(trait_scores)
+            predictions['pred_s'+trait] = trait_scores.flatten()[0]
+            # predictions['pred_s'+trait] = scaled_trait_scores.flatten()
+
+            trait_categories = pkl_model.predict(X, regression=False)
+            predictions['pred_c'+trait] = str(trait_categories[0])
+            # predictions['pred_c'+trait] = trait_categories
+
+            trait_categories_probs = pkl_model.predict_proba(X)
+            predictions['pred_prob_c'+trait] = trait_categories_probs[:, 1][0]
+            # predictions['pred_prob_c'+trait] = trait_categories_probs[:, 1]
+        return predictions
 
 """"
 ----- VISUALISATION OF THE RESULTS ------
@@ -99,7 +112,7 @@ def fetch_predictions(usernames):
         summaries = [line.rstrip() for line in f]
     op_file = open('predictions.txt','a')
     for s in range(len(summaries)):
-        op_file.write(usernames[s] + ' => [' + predict_personality(summaries[s]) + ']' + '\n')
+        op_file.write(usernames[s] + ' => [' + str(predict_personality(summaries[s])) + ']' + '\n')
     print('Generated predictions => predictions.txt')
     op_file.close()
 
@@ -107,13 +120,44 @@ def fetch_predictions(usernames):
 if __name__ == '__main__':
 
     #LOADING PRETRAINED MODELS
-    cEXT = pickle.load( open( "models/cEXT.p", "rb"))
-    cNEU = pickle.load( open( "models/cNEU.p", "rb"))
-    cAGR = pickle.load( open( "models/cAGR.p", "rb"))
-    cCON = pickle.load( open( "models/cCON.p", "rb"))
-    cOPN = pickle.load( open( "models/cOPN.p", "rb"))
-    vectorizer_31 = pickle.load( open( "models/vectorizer_31.p", "rb"))
-    vectorizer_30 = pickle.load( open( "models/vectorizer_30.p", "rb"))
+
+    class Model():
+        def __init__(self):
+            self.rfr = RandomForestRegressor(bootstrap=True,
+            max_features='sqrt',
+            min_samples_leaf=1,
+            min_samples_split=2,
+            n_estimators= 200)
+            self.rfc = RandomForestClassifier(max_features='sqrt', n_estimators=110)
+            self.tfidf = TfidfVectorizer(stop_words='english', strip_accents='ascii')
+
+        def fit(self, X, y, regression=True):
+            X = self.tfidf.fit_transform(X)
+            if regression:
+                self.rfr = self.rfr.fit(X, y)
+            else:
+                self.rfc = self.rfc.fit(X, y)
+
+        def predict(self, X, regression=True):
+            X = self.tfidf.transform(X)
+            if regression:
+                return self.rfr.predict(X)
+            else:
+                return self.rfc.predict(X)
+
+        def predict_proba(self, X, regression=False):
+            X = self.tfidf.transform(X)
+            if regression:
+                raise ValueError('Cannot predict probabilites of a regression!')
+            else:
+                return self.rfc.predict_proba(X)
+
+    M = Model()
+    models={}
+    traits = ['OPN', 'CON', 'EXT', 'AGR', 'NEU']
+    for trait in traits:
+        with open('models/' + trait + '_model.pkl', 'rb') as f:
+            models[trait] = pickle.load(f)
 
     #CLEAR PREVIOUS OUTPUTS
     if os.path.exists('information.txt'):
