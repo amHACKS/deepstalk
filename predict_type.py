@@ -60,7 +60,7 @@ def fetch_usernames(filename, count):
 def fetch_tweets(usernames):
     tweets = []
     op_file = open('information.txt','a')
-    print('Fetching summaries => information.txt')
+    print('reading posts from => information.txt')
     for u in usernames:
         summary = tweet(u)
         op_file.write(summary + '\n')
@@ -77,15 +77,15 @@ def predict_personality(X):
             # scaler = MinMaxScaler(feature_range=(0, 50))
             # print(scaler.fit_transform(trait_scores))
             # scaled_trait_scores = scaler.fit_transform(trait_scores)
-            predictions['pred_s'+trait] = trait_scores.flatten()[0]
-            # predictions['pred_s'+trait] = scaled_trait_scores.flatten()
+            # predictions['pred_s'+trait] = trait_scores.flatten()[0]
+            # # predictions['pred_s'+trait] = scaled_trait_scores.flatten()
 
-            trait_categories = pkl_model.predict(X, regression=False)
-            predictions['pred_c'+trait] = str(trait_categories[0])
-            # predictions['pred_c'+trait] = trait_categories
+            # trait_categories = pkl_model.predict(X, regression=False)
+            # predictions['pred_c'+trait] = str(trait_categories[0])
+            # # predictions['pred_c'+trait] = trait_categories
 
             trait_categories_probs = pkl_model.predict_proba(X)
-            predictions['pred_prob_c'+trait] = trait_categories_probs[:, 1][0]
+            predictions['trait_score_'+trait] = trait_categories_probs[:, 1][0]
             # predictions['pred_prob_c'+trait] = trait_categories_probs[:, 1]
         return predictions
 
@@ -112,8 +112,9 @@ def fetch_predictions(usernames):
         summaries = [line.rstrip() for line in f]
     op_file = open('predictions.txt','a')
     for s in range(len(summaries)):
-        op_file.write(usernames[s] + ' => [' + str(predict_personality(summaries[s])) + ']' + '\n')
-    print('Generated predictions => predictions.txt')
+        preds = str(predict_personality(summaries[s])) 
+        op_file.write(usernames[s] + ' => [' + preds + ']' + '\n')
+    print('Generated predictions stored in => predictions.txt')
     op_file.close()
 
 
