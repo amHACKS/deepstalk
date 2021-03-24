@@ -1,6 +1,6 @@
-## PyAnalyzer
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mainakdeb/e_summit/blob/main/predict_personality.ipynb)
-[![Binder](https://camo.githubusercontent.com/bfeb5472ee3df9b7c63ea3b260dc0c679be90b97/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656e6465722d6e627669657765722d6f72616e67652e7376673f636f6c6f72423d66333736323626636f6c6f72413d346434643464)](https://nbviewer.jupyter.org/github/Mainakdeb/e_summit/blob/main/predict_personality.ipynb)
+## DeepStalk :mag:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mainakdeb/deepstalk/blob/main/predict_personality.ipynb)
+[![Binder](https://camo.githubusercontent.com/bfeb5472ee3df9b7c63ea3b260dc0c679be90b97/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656e6465722d6e627669657765722d6f72616e67652e7376673f636f6c6f72423d66333736323626636f6c6f72413d346434643464)](https://nbviewer.jupyter.org/github/Mainakdeb/deepstalk/blob/main/predict_personality.ipynb)
 
 This project aims to predict the psychological traits of a person on the basis of his/her social media posts. It predicts the following traits:
 - EXT - Extraversion
@@ -9,24 +9,24 @@ This project aims to predict the psychological traits of a person on the basis o
 - CON - Conscientiousness
 - AGR - Agreeableness
 
-![](https://github.com/Mainakdeb/e_summit/blob/main/images/alg_diagram_2.png)
+![](https://github.com/Mainakdeb/deepstalk/blob/main/images/alg_diagram_2.png)
 
 
 ## Here's How it Works:
-![](https://github.com/Mainakdeb/e_summit/blob/main/images/e_summit_flowchart_2.png)
+![](https://github.com/Mainakdeb/deepstalk/blob/main/images/e_summit_flowchart_2.png)
 
 ## Run on Google Colab (no installation required)
-   [Link to colab notebook](https://colab.research.google.com/github/Mainakdeb/e_summit/blob/main/predict_personality.ipynb)
+   [Link to colab notebook](https://colab.research.google.com/github/Mainakdeb/deepstalk/blob/main/predict_personality.ipynb)
    This notebook demostrates how our script works.
 
 ## Local Setup 
 1. Clone the repository
 ```
-git clone https://github.com/Mainakdeb/e_summit.git
+git clone https://github.com/Mainakdeb/deepstalk.git
 ```
 2. Navigate to specific Directory 
 ```
-cd e_summit
+cd deepstalk
 ```
 3. Install the requirements from requirements.txt file
 ``` python
@@ -64,7 +64,7 @@ pip install -r requirements.txt
 ![Screenshot from 2021-02-08 15-25-51](https://user-images.githubusercontent.com/53506835/107203908-075e8780-6a22-11eb-9934-cbc9054de2e4.png)
 
 ### 3. Visualized Report (in the colab notebook) ###
-![Screenshot from 2021-02-08 15-29-07](https://github.com/Mainakdeb/e_summit/blob/main/images/elonmusk_report.png)
+![Screenshot from 2021-02-08 15-29-07](https://github.com/Mainakdeb/deepstalk/blob/main/images/elonmusk_report.png)
 
 
 ## Tasks Completed ##
